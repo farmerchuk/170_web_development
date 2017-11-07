@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Adventures of Sherlock Holmes</title>
+    <title><%= @title %></title>
 
     <link rel="stylesheet" href="stylesheets/pure-min.css">
     <link rel="stylesheet" href="stylesheets/fonts.css">
@@ -23,9 +23,11 @@
               <a class="pure-menu-heading" href="/">Table of Contents</a>
 
               <ul class="pure-menu-list">
-                <li class="pure-menu-item">
-                  <a href="#" class="pure-menu-link">Chapter 1</a>
-                </li>
+                <% @toc.each do |chapter| %>
+                  <li class="pure-menu-item">
+                    <a href="#" class="pure-menu-link"><%= chapter %></a>
+                  </li>
+                <% end %>
               </ul>
           </div>
       </div>
@@ -41,9 +43,11 @@
 
           <div class="pure-menu">
             <ul class="pure-menu-list">
-              <li class="pure-menu-item">
-                <a href="#" class="pure-menu-link">Chapter 1</a>
-              </li>
+              <% @toc.each do |chapter| %>
+                <li class="pure-menu-item">
+                  <a href="#" class="pure-menu-link"><%= chapter %></a>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
