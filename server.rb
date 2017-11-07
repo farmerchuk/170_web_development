@@ -1,6 +1,7 @@
 # server.rb
 
 require 'socket'
+require 'pry'
 
 def parse_request(request_line)
   url_components = request_line.split(/[ ?]/)
@@ -41,6 +42,10 @@ loop do
   client.puts http_method
   client.puts path
   client.puts params
+  client.puts
+  client.puts "<a href='?rolls=2&sides=6'>Roll 2d6</a>"
+  client.puts "<a href='?rolls=1&sides=6'>Roll 1d4</a>"
+  client.puts "<a href='?rolls=3&sides=20'>Roll 3d20</a>"
   client.puts '</pre>'
   rolls.times { client.puts '<p>', rand(sides) + 1, '</p>' }
   client.puts '</body>'
