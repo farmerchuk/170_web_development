@@ -1,5 +1,5 @@
 # config.ru
 
-require_relative 'hello_world'
+require_relative 'app'
 
-run HelloWorld.new
+run App.new
