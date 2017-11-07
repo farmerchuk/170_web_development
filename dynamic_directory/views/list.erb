@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+  <a href="/?sort=asc">sort ascending</a>
+  <a href="/?sort=des">sort decending</a>
+  <ul>
+    <% @file_names.each do |file| %>
+      <a href="/<%= file %>">
+        <li><%= file %></li>
+      </a>
+    <% end %>
+  </ul>
+</body>
+</html>
