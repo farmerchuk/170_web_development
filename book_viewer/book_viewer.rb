@@ -11,6 +11,10 @@ helpers do
     paragraphs = text.split("\n\n")
     paragraphs.map.with_index { |para, idx| "<p id='#{idx}'>#{para}</p>" }.join('')
   end
+
+  def highlight(text, query)
+    text.split(query).join("<strong>#{query}</strong>")
+  end
 end
 
 get "/" do

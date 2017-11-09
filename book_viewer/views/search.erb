@@ -21,9 +21,13 @@
 
           <ul class="pure-menu-list">
             <% para.each do |text, id| %>
-              <li class="pure-menu-item">
-                <a href="/chapters/<%= title[1] %>#<%= id %>" class="pure-menu-link"><%= text %></a>
-              </li>
+              <p>
+                <li class="pure-menu-item">
+                  <a href="/chapters/<%= title[1] %>#<%= id %>">
+                    <%= highlight(text, @query) %>
+                  </a>
+                </li>
+              </p>
             <% end %>
           </ul>
 
