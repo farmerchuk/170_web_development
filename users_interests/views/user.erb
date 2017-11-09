@@ -1,0 +1,10 @@
+<h2><%= format_name(@user_name) %></h2>
+<p><strong>Email:</strong> <%= @user_email %></p>
+<p><strong>Interests:</strong> <%= @user_interests %></p>
+<br>
+<h3>Other users:</h3>
+<% @users.each do |user, details| %>
+  <a href="/user/<%= user %>">
+    <h4><%= format_name(user) unless user.to_s == @user_name.to_s %></h4>
+  </a>
+<% end %>

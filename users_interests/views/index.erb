@@ -1,0 +1,5 @@
+<% @users.each do |user, details| %>
+  <a href="/user/<%= user %>">
+    <h4><%= format_name(user) %></h4>
+  </a>
+<% end %>
